@@ -14,13 +14,13 @@ public class CustomViewPagerAdapter extends FragmentStateAdapter {
     @Override
     public Fragment createFragment(int position) {
         switch (position) {
-            case 0: return null;
-            default: return null;
+            case 0: return InfoFragment.newInstance("To Get Started", "Press F");
+            default: return InfoFragment.newInstance("Invalid Title", "Page does not exist: 404");
         }
     }
 
     @Override
     public int getItemCount() {
-        return 0;
+        return 2;
     }
 }

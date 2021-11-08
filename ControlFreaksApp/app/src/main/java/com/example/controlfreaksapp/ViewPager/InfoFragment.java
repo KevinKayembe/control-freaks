@@ -1,23 +1,22 @@
-package com.example.controlfreaksapp.Fragments;
+package com.example.controlfreaksapp.ViewPager;
 
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
-import androidx.navigation.Navigation;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
+import android.widget.TextView;
 
 import com.example.controlfreaksapp.R;
 
 /**
  * A simple {@link Fragment} subclass.
- * Use the {@link HomeFragment#newInstance} factory method to
+ * Use the {@link InfoFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class HomeFragment extends Fragment {
+public class InfoFragment extends Fragment {
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -28,7 +27,7 @@ public class HomeFragment extends Fragment {
     private String mParam1;
     private String mParam2;
 
-    public HomeFragment() {
+    public InfoFragment() {
         // Required empty public constructor
     }
 
@@ -38,11 +37,11 @@ public class HomeFragment extends Fragment {
      *
      * @param param1 Parameter 1.
      * @param param2 Parameter 2.
-     * @return A new instance of fragment HomeFragment.
+     * @return A new instance of fragment InfoFragment.
      */
     // TODO: Rename and change types and number of parameters
-    public static HomeFragment newInstance(String param1, String param2) {
-        HomeFragment fragment = new HomeFragment();
+    public static InfoFragment newInstance(String param1, String param2) {
+        InfoFragment fragment = new InfoFragment();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
@@ -63,31 +62,15 @@ public class HomeFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View view = inflater.inflate(R.layout.fragment_home, container, false);
-        Button aboutButton = view.findViewById(R.id.aboutButton);
-        aboutButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Navigation.findNavController(view).navigate(R.id.action_nav_home_to_nav_about);
-            }
-        });
-
-        Button shopButton = view.findViewById(R.id.shopButton);
-        shopButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Navigation.findNavController(view).navigate(R.id.action_nav_home_to_nav_shop);
-            }
-        });
-
-        Button contactButton = view.findViewById(R.id.contactButton);
-        contactButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Navigation.findNavController(view).navigate(R.id.action_nav_home_to_nav_contact);
-            }
-        });
-
+        View view = inflater.inflate(R.layout.fragment_info, container, false);
+        TextView infoTitle = view.findViewById(R.id.infoTitle);
+        if (mParam1 != null) {
+            infoTitle.setText(mParam1);
+        }
+        TextView infoDesc = view.findViewById(R.id.infoDescription);
+        if (mParam2 != null) {
+            infoTitle.setText(mParam2);
+        }
         return view;
     }
 }

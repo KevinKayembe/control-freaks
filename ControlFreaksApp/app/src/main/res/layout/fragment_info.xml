@@ -5,23 +5,20 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".Fragments.HomeFragment">
+    tools:context=".ViewPager.InfoFragment">
 
-    <Button
-        android:id="@+id/aboutButton"
+    <TextView
+        android:id="@+id/infoTitle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/about_button" />
+        android:gravity="center_horizontal"
+        android:text="@string/hello_blank_fragment"
+        android:textSize="30sp" />
 
-    <Button
-        android:id="@+id/shopButton"
+    <TextView
+        android:id="@+id/infoDescription"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/shop_button" />
-
-    <Button
-        android:id="@+id/contactButton"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/contact_button" />
+        android:text="@string/hello_blank_fragment"
+        android:textSize="12sp" />
 </LinearLayout>
