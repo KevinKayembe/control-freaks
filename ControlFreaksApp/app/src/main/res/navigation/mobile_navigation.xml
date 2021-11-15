@@ -8,13 +8,17 @@
     <fragment
         android:id="@+id/nav_tips"
         android:name="com.example.controlfreaksapp.ViewPager.TipsFragment"
-        android:label="fragment_tips"
+        android:label="@string/menu_tips"
         tools:layout="@layout/fragment_tips" />
     <fragment
         android:id="@+id/nav_contact"
         android:name="com.example.controlfreaksapp.Fragments.ContactFragment"
-        android:label="fragment_contact"
-        tools:layout="@layout/fragment_contact" />
+        android:label="@string/contact_button"
+        tools:layout="@layout/fragment_contact">
+        <action
+            android:id="@+id/action_nav_contact_to_nav_tracking"
+            app:destination="@id/nav_tracking" />
+    </fragment>
     <fragment
         android:id="@+id/nav_info"
         android:name="com.example.controlfreaksapp.ViewPager.InfoFragment"
@@ -23,18 +27,18 @@
     <fragment
         android:id="@+id/nav_about"
         android:name="com.example.controlfreaksapp.Fragments.AboutFragment"
-        android:label="fragment_about"
+        android:label="@string/about_button"
         tools:layout="@layout/fragment_about" />
     <fragment
         android:id="@+id/nav_shop"
         android:name="com.example.controlfreaksapp.Fragments.ShopFragment"
-        android:label="fragment_shop"
+        android:label="@string/shop_button"
         tools:layout="@layout/fragment_shop" />
     <fragment
         android:id="@+id/nav_home"
         android:name="com.example.controlfreaksapp.Fragments.HomeFragment"
-        android:label="fragment_home"
-        tools:layout="@layout/fragment_home" >
+        android:label="@string/menu_home"
+        tools:layout="@layout/fragment_home">
         <action
             android:id="@+id/action_nav_home_to_nav_shop"
             app:destination="@id/nav_shop" />
@@ -48,7 +52,12 @@
     <fragment
         android:id="@+id/nav_subscription"
         android:name="com.example.controlfreaksapp.Fragments.SubscriptionFragment"
-        android:label="fragment_subscription"
+        android:label="@string/menu_subs"
         tools:layout="@layout/fragment_subscription" />
+    <fragment
+        android:id="@+id/nav_tracking"
+        android:name="com.example.controlfreaksapp.Fragments.TrackOrderFragment"
+        android:label="@string/trackOrder_button"
+        tools:layout="@layout/fragment_track_order" />
 
 </navigation>

@@ -21,6 +21,7 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="phone_button">Phone</string>
     <string name="email_button">Email</string>
+    <string name="trackOrder_button">Track My Order</string>
 
     <string name="aboutUsTitle">What is Control Freaks?</string>
     <string name="aboutUsDesc">Control Freaks is a</string>

@@ -3,21 +3,19 @@ package com.example.controlfreaksapp.Fragments;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
-import androidx.navigation.Navigation;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 
 import com.example.controlfreaksapp.R;
 
 /**
  * A simple {@link Fragment} subclass.
- * Use the {@link ContactFragment#newInstance} factory method to
+ * Use the {@link TrackOrderFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class ContactFragment extends Fragment {
+public class TrackOrderFragment extends Fragment {
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -28,7 +26,7 @@ public class ContactFragment extends Fragment {
     private String mParam1;
     private String mParam2;
 
-    public ContactFragment() {
+    public TrackOrderFragment() {
         // Required empty public constructor
     }
 
@@ -38,11 +36,11 @@ public class ContactFragment extends Fragment {
      *
      * @param param1 Parameter 1.
      * @param param2 Parameter 2.
-     * @return A new instance of fragment ContactFragment.
+     * @return A new instance of fragment TrackOrderFragment.
      */
     // TODO: Rename and change types and number of parameters
-    public static ContactFragment newInstance(String param1, String param2) {
-        ContactFragment fragment = new ContactFragment();
+    public static TrackOrderFragment newInstance(String param1, String param2) {
+        TrackOrderFragment fragment = new TrackOrderFragment();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
@@ -63,14 +61,6 @@ public class ContactFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View view = inflater.inflate(R.layout.fragment_contact, container, false);
-        Button trackOrderButton = view.findViewById(R.id.trackOrderButton);
-        trackOrderButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Navigation.findNavController(view).navigate(R.id.action_nav_contact_to_nav_tracking);
-            }
-        });
-        return view;
+        return inflater.inflate(R.layout.fragment_track_order, container, false);
     }
 }

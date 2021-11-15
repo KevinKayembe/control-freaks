@@ -12,13 +12,13 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center_horizontal"
-        android:text="@string/hello_blank_fragment"
+        android:text="@string/aboutUsTitle"
         android:textSize="30sp" />
 
     <TextView
         android:id="@+id/aboutDesc"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/hello_blank_fragment"
+        android:text="@string/aboutUsDesc"
         android:textSize="20sp" />
 </LinearLayout>
