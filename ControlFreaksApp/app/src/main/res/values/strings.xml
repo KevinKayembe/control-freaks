@@ -24,5 +24,7 @@
     <string name="trackOrder_button">Track My Order</string>
 
     <string name="aboutUsTitle">What is Control Freaks?</string>
-    <string name="aboutUsDesc">Control Freaks is a</string>
+    <string name="aboutUsDesc">Control Freaks is a company that customizes the controllers of all platforms. \n
+        Our job is to have users make use of our controller creation to know what they want or purchase our original pre-made controllers instead. \n
+        Once purchases are made, we\'ll give each first-time users a 1-year warranty and have their custom controller shipped to your home in due time.</string>
 </resources>
