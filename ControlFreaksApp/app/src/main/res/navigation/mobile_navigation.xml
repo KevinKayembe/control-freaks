@@ -59,5 +59,9 @@
         android:name="com.example.controlfreaksapp.Fragments.TrackOrderFragment"
         android:label="@string/trackOrder_button"
         tools:layout="@layout/fragment_track_order" />
+    <fragment
+        android:id="@+id/nav_settings"
+        android:name="com.example.controlfreaksapp.Fragments.SettingsFragment"
+        android:label="SettingsFragment" />
 
 </navigation>

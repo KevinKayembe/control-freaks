@@ -1,26 +1,27 @@
-package com.example.controlfreaksapp.ListView;
+package com.example.controlfreaksapp.pojo;
 
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
 
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AdapterView;
-import android.widget.Button;
 import android.widget.ListView;
+import android.widget.TextView;
 
+import com.example.controlfreaksapp.ListView.ControllerDataType;
+import com.example.controlfreaksapp.ListView.CustomListViewAdapter;
 import com.example.controlfreaksapp.R;
+
+import java.util.ArrayList;
 
 /**
  * A simple {@link Fragment} subclass.
- * Use the {@link ShopFragment#newInstance} factory method to
+ * Use the {@link ControllerTypeFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class ShopFragment extends Fragment {
-    ListView listView;
+public class ControllerTypeFragment extends Fragment {
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -31,7 +32,7 @@ public class ShopFragment extends Fragment {
     private String mParam1;
     private String mParam2;
 
-    public ShopFragment() {
+    public ControllerTypeFragment() {
         // Required empty public constructor
     }
 
@@ -41,11 +42,11 @@ public class ShopFragment extends Fragment {
      *
      * @param param1 Parameter 1.
      * @param param2 Parameter 2.
-     * @return A new instance of fragment ShopFragment.
+     * @return A new instance of fragment ControllerTypeFragment.
      */
     // TODO: Rename and change types and number of parameters
-    public static ShopFragment newInstance(String param1, String param2) {
-        ShopFragment fragment = new ShopFragment();
+    public static ControllerTypeFragment newInstance(String param1, String param2) {
+        ControllerTypeFragment fragment = new ControllerTypeFragment();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
@@ -66,14 +67,12 @@ public class ShopFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View view = inflater.inflate(R.layout.fragment_shop, container, false);
-        listView = view.findViewById(R.id.controllerTypeList);
-        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Log.d("ID",""+position);
-            }
-        });
+        View view = inflater.inflate(R.layout.fragment_controller_type, container, false);
+        ListView listView = view.findViewById(R.id.controllerTypeList);
+//        TextView name = view.findViewById(R.id.controllerName);
+        ArrayList<ControllerDataType> controllerDataTypeArrayList = new ArrayList<>();
+        controllerDataTypeArrayList.add(new ControllerDataType("Nintendo Gamecube", "Made in 2000"));
+        listView.setAdapter(new CustomListViewAdapter(getContext(), controllerDataTypeArrayList));
         return view;
     }
 }
