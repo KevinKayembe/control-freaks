@@ -9,13 +9,16 @@
         android:id="@+id/controllerName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:fontFamily="sans-serif"
         android:text="@string/hello_blank_fragment"
         android:textAlignment="center"
-        android:textSize="28sp" />
+        android:textSize="26sp"
+        android:textStyle="bold|italic" />
 
     <TextView
         android:id="@+id/controllerDesc"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/hello_blank_fragment" />
+        android:text="@string/hello_blank_fragment"
+        android:textAlignment="center" />
 </LinearLayout>

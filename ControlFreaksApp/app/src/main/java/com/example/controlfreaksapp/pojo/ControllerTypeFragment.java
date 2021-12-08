@@ -7,6 +7,7 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -22,6 +23,8 @@ import java.util.ArrayList;
  * create an instance of this fragment.
  */
 public class ControllerTypeFragment extends Fragment {
+    ListView listView;
+    TextView description;
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -68,11 +71,6 @@ public class ControllerTypeFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_controller_type, container, false);
-        ListView listView = view.findViewById(R.id.controllerTypeList);
-//        TextView name = view.findViewById(R.id.controllerName);
-        ArrayList<ControllerDataType> controllerDataTypeArrayList = new ArrayList<>();
-        controllerDataTypeArrayList.add(new ControllerDataType("Nintendo Gamecube", "Made in 2000"));
-        listView.setAdapter(new CustomListViewAdapter(getContext(), controllerDataTypeArrayList));
         return view;
     }
 }

@@ -62,7 +62,12 @@ public class HomeFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
+        /**
+         * Inflate the layout for this fragment
+         *
+         * @Navigation - This will have multiple buttons to the screen and the button once
+         * clicked will navigate to the corresponding fragment via the action nav.
+         */
         View view = inflater.inflate(R.layout.fragment_home, container, false);
         Button aboutButton = view.findViewById(R.id.aboutButton);
         aboutButton.setOnClickListener(new View.OnClickListener() {

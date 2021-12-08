@@ -3,6 +3,7 @@ package com.example.controlfreaksapp.ListView;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.navigation.Navigation;
 
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -11,8 +12,11 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.ListView;
+import android.widget.TextView;
 
 import com.example.controlfreaksapp.R;
+
+import java.util.ArrayList;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -21,6 +25,7 @@ import com.example.controlfreaksapp.R;
  */
 public class ShopFragment extends Fragment {
     ListView listView;
+    TextView description;
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -68,10 +73,18 @@ public class ShopFragment extends Fragment {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_shop, container, false);
         listView = view.findViewById(R.id.controllerTypeList);
+        description = view.findViewById(R.id.controllerDesc);
+        ArrayList<ControllerDataType> controllerDataTypeArrayList = new ArrayList<>();
+        controllerDataTypeArrayList.add(new ControllerDataType("Nintendo Gamecube", "Made in 2000"));
+        controllerDataTypeArrayList.add(new ControllerDataType("Nintendo Switch Pro Controller", "Made in 2018"));
+        controllerDataTypeArrayList.add(new ControllerDataType("Xbox One S", "Made in 2017"));
+        controllerDataTypeArrayList.add(new ControllerDataType("PlayStation 4", "Made in 2014"));
+        listView.setAdapter(new CustomListViewAdapter(getContext(), controllerDataTypeArrayList));
+
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Log.d("ID",""+position);
+//                Navigation.findNavController(view).navigate(R.id.action_nav_home_to_nav_controller_type);
             }
         });
         return view;

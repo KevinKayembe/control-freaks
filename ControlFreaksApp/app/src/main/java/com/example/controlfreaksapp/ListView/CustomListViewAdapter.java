@@ -15,10 +15,22 @@ import com.example.controlfreaksapp.R;
 import java.util.ArrayList;
 
 public class CustomListViewAdapter extends ArrayAdapter<ControllerDataType> {
+    /**
+     * The class extends to a data type as an array adapter.
+     * @param context
+     * @param items - holds an array of Strings in the ControllerDataType.
+     */
     public CustomListViewAdapter(@NonNull Context context, ArrayList<ControllerDataType> items) {
         super(context, 0, items);
     }
 
+    /**
+     *
+     * @param position
+     * @param convertView
+     * @param parent
+     * @return
+     */
     @NonNull
     @Override
     public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {

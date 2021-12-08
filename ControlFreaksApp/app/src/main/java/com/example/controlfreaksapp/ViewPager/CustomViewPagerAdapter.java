@@ -10,6 +10,11 @@ public class CustomViewPagerAdapter extends FragmentStateAdapter {
         super(fragmentActivity);
     }
 
+    /**
+     * This will create a fragment of its own and 
+     * @param position
+     * @return void
+     */
     @NonNull
     @Override
     public Fragment createFragment(int position) {
